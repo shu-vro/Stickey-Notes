@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Architects Daughter', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', cursive;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100vh;
+    background: url("Image/wood.jpeg") no-repeat 50% 50%;
+    background-size: cover;
+}
+
+nav {
+    height: 50px;
+    width: 100%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.438);
+    font-size: 40px;
+    z-index: 10;
+}
+
+nav .addButton {
+    color: lime;
+    margin-left: 100px;
+    cursor: pointer;
+    transition: .25s;
+}
+nav .addButton.rotate{
+    transform: rotate(45deg);
+}
+nav .fa-trash {
+    color: crimson;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+main {
+    padding: 10px;
+}
+
+main .container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .container .box {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    margin: 20px;
+    padding: 70px 30px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 3px #4e4646;
+    transition: .5s;
+}
+
+main .container .box:hover {
+    transform: scale(1.1);
+}
+
+main .container .box .text {
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    min-height: 250px;
+    font-size: 35px;
+    font-weight: 500;
+    color: black;
+}
+
+main .trash {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: red;
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #000000;
+    background: rgba(0, 0, 0, 0.366);
+}
+
+main .container .box::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(#9e9e9e, #111111);
+    border-radius: 50%;
+    border: 2px solid #000000;
+    box-shadow: -4px 8px 10px -4px #000000;
+}
+
+main .container .box p {
+    color: #111111;
+}
+
+main .container .box::-webkit-scrollbar {
+    width: 0;
+}
+
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.cover.active {
+    display: flex;
+}
+
+.inputText {
+    position: relative;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+    background: transparent;
+}
+
+textarea {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 400px;
+    overflow: hidden;
+    z-index: 2;
+    padding: 50px 25px;
+    font-size: 20px;
+}
+
+.add {
+    position: absolute;
+    top: -35px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    font-size: 34px;
+    color: #07882A;
+    cursor: pointer;
+}
